@@ -10,7 +10,7 @@
 def all_houses(filename):
   cohort_data = open(filename)
   for line in cohort_data:
-    line = line.rstrip()
+    # line = line.rstrip()
     words = line.split('|')
     #print(words)
   """Return a set of all house names in the given file.

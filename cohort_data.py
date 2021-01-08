@@ -1,8 +1,19 @@
 """Functions to parse a file containing student data."""
 
+""" This is how were are parsing the data file"""
+# def data_split(filename):
+#   cohort_data = open(filename)
+#   for line in cohort_data:
+#     line = line.rstrip()
+#     words = line.split('|')
 
 def all_houses(filename):
-    """Return a set of all house names in the given file.
+  cohort_data = open(filename)
+  for line in cohort_data:
+    line = line.rstrip()
+    words = line.split('|')
+    #print(words)
+  """Return a set of all house names in the given file.
 
     For example:
       >>> unique_houses('cohort_data.txt')
@@ -14,13 +25,15 @@ def all_houses(filename):
     Return:
       - set[str]: a set of strings
     """
-
-    houses = set()
+  houses = words[2]
+  houses_set = set(houses)
+  
 
     # TODO: replace this with your code
 
-    return houses
-
+  return houses_set
+  print(houses_set)
+all_houses('cohort_data.txt')
 
 def students_by_cohort(filename, cohort='All'):
     """Return a list of students' full names by cohort.

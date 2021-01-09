@@ -3,16 +3,23 @@
 """ This is how were are parsing the data file"""
 # def data_split(filename):
 #   cohort_data = open(filename)
-#   for line in cohort_data:
-#     line = line.rstrip()
+#   for line in cohort_data: 
+#   line = line.rstrip() 
+
 #     words = line.split('|')
 
 def all_houses(filename):
   cohort_data = open(filename)
+  houses_set = set()
   for line in cohort_data:
-    # line = line.rstrip()
+    line = line.rstrip()
     words = line.split('|')
-    #print(words)
+      
+    housename = words[2]
+    if housename:
+        houses_set.add(housename)
+  return houses_set
+   
   """Return a set of all house names in the given file.
 
     For example:
@@ -23,16 +30,15 @@ def all_houses(filename):
       - filename (str): the path to a data file
 
     Return:
+
       - set[str]: a set of strings
     """
-  houses = words[2]
-  houses_set = set(houses)
+  
   
 
     # TODO: replace this with your code
 
-  return houses_set
-  print(houses_set)
+  
 all_houses('cohort_data.txt')
 
 def students_by_cohort(filename, cohort='All'):

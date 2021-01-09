@@ -42,6 +42,7 @@ def all_houses(filename):
 all_houses('cohort_data.txt')
 
 def students_by_cohort(filename, cohort='All'):
+  
     """Return a list of students' full names by cohort.
 
     Names are sorted in alphabetical order. If a cohort isn't
@@ -67,9 +68,37 @@ def students_by_cohort(filename, cohort='All'):
 
     Return:
       - list[list]: a list of lists
+
+
     """
+  # first_name = words[0]
+  # last_name = words[1]
+  # cohort = words[-1]
+    cohort_data = open(filename)
+
 
     students = []
+    for line in cohort_data:
+    line = line.rstrip()
+    words = line.split('|')
+    full_name = words[0] + ' ' + words[1] 
+    cohort = words[-1]
+
+   students.append(full_name)
+
+   print("*******************")
+
+   print(students)
+
+   print("*******************")
+
+  # last name are in [0]first name  and [1] last name and cohort[-1]
+  # go through each line if the cohort 
+  # split each name of the students 
+  
+ 
+  
+
 
     # TODO: replace this with your code
 
